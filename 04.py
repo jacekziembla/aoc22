@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Tuple
 
-with open("04.txt") as f:
+with open("input/04.txt") as f:
     lines = f.read().split()
 
 

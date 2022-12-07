@@ -1,4 +1,4 @@
-with open("01.txt") as f:
+with open("input/01.txt") as f:
     data = f.read().split("\n\n")
 
 elves = [list(map(int, item.split())) for item in data]

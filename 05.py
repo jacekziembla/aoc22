@@ -1,4 +1,4 @@
-with open("05.txt") as f:
+with open("input/05.txt") as f:
     data = f.read()
 
 cargo_input, moves_raw_input = data.split("\n\n")

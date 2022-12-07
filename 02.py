@@ -1,6 +1,6 @@
 from collections import Counter
 
-with open("02.txt") as f:
+with open("input/02.txt") as f:
     raw_data = f.read()
 counter = Counter(raw_data)
 data = raw_data.split("\n")

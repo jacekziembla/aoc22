@@ -1,6 +1,6 @@
 from collections import Counter
 
-with open("03.txt") as f:
+with open("input/03.txt") as f:
     lines = f.read().split()
 
 letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

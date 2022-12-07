@@ -1,4 +1,4 @@
-with open("07.txt") as f:
+with open("input/07.txt") as f:
     lines = f.read().split("\n")
 
 dir_stack = []

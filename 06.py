@@ -1,6 +1,6 @@
 from collections import Counter
 
-with open("06.txt") as f:
+with open("input/06.txt") as f:
     stream = f.read()
 
 BUFFER_SIZE = 4
