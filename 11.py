@@ -4,8 +4,18 @@ from typing import List
 with open("input/11.txt") as f:
     lines = f.read().replace("* old", "^ 2").split("\n")
 
+PART_B = True  #
+
+if PART_B:
+    modifier = lambda x: x % Monkey.product
+    ROUNDS = 10000
+else:
+    modifier = lambda x: int(x / 3)
+    ROUNDS = 20
+
 
 class Monkey:
+    product = 1
 
     def __init__(self, items: List[int], operator: str, value: int, test_value: int, if_true: int, if_false: int):
         self.items = items
@@ -25,7 +35,7 @@ class Monkey:
             new_item = item * item
         else:
             raise ValueError
-        return int(new_item / 3)
+        return modifier(new_item)
 
     def test(self, item: int) -> bool:
         return item % self.test_value == 0
@@ -51,12 +61,13 @@ for monkey_index in range(number_of_monkeys):
         if_true=int(lines[7 * monkey_index + 4].split()[-1]),
         if_false=int(lines[7 * monkey_index + 5].split()[-1])
     ))
+    Monkey.product *= int(lines[7 * monkey_index + 3].split()[-1])
 
-for _ in range(20):
+for _ in range(ROUNDS):
     for monkey in monkeys:
         for _ in range(len(monkey.items)):
             monkey.inspect_and_throw(monkeys)
 
-# Part A
+# Result
 counters = sorted([i.counter for i in monkeys])
 print(counters.pop() * counters.pop())
